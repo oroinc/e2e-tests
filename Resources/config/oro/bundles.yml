@@ -1,0 +1,2 @@
+bundles:
+    - { name: Oro\Bundle\E2eTestBundle\OroE2eTestBundle, priority: 200 }

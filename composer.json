@@ -1,0 +1,40 @@
+{
+    "name": "oro/e2e-tests",
+    "type": "symfony-bundle",
+    "description": "End-to-End Tests for OroCommerce Application",
+    "homepage": "",
+    "keywords": ["Oro", "Behat", "E2E"],
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Oro, Inc",
+            "homepage": "http://www.oroinc.com"
+        }
+    ],
+    "require": {
+        "oro/commerce": "5.1.*",
+        "oro/commerce-dpd": "5.1.*",
+        "oro/crm": "5.1.*",
+        "oro/crm-dotmailer": "5.1.*",
+        "oro/crm-pro-ldap-bundle": "5.1.*",
+        "oro/crm-zendesk": "5.1.*",
+        "oro/mailchimp": "5.1.*"
+    },
+    "autoload": {
+        "psr-4": { "Oro\\Bundle\\E2eTestBundle\\": "" },
+        "exclude-from-classmap": ["/Tests/"]
+    },
+    "repositories": {
+        "oro": {
+            "type": "composer",
+            "url": "https://packagist.orocrm.com"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.1-dev"
+        }
+    }
+}

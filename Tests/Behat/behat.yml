@@ -1,0 +1,102 @@
+oro_behat_extension:
+  suites:
+    OroE2eTestBundle:
+      contexts:
+        - Oro\Bundle\TestFrameworkBundle\Tests\Behat\Context\OroMainContext
+        - Oro\Bundle\TestFrameworkBundle\Tests\Behat\Context\FixturesContext
+        - Oro\Bundle\SecurityBundle\Tests\Behat\Context\ACLContext
+        - Oro\Bundle\UserBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\SalesBundle\Tests\Behat\Context\SalesContext
+        - Oro\Bundle\DataGridBundle\Tests\Behat\Context\GridContext
+        - Oro\Bundle\FormBundle\Tests\Behat\Context\FormContext
+        - Oro\Bundle\QueryDesignerBundle\Tests\Behat\Context\QueryDesignerContext
+        - Oro\Bundle\UIBundle\Tests\Behat\Context\ContextSelectorContext
+        - Oro\Bundle\ConfigBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\NavigationBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\LocaleBundle\Tests\Behat\Context\LocalizationContext
+        - Oro\Bundle\ActivityListBundle\Tests\Behat\Context\ActivityContext
+      paths:
+        - '@OroE2eTestBundle/Tests/Behat/Features'
+
+  elements:
+    E2E Integration Form:
+      selector: 'form[name="oro_integration_channel_form"]'
+      class: Oro\Bundle\TestFrameworkBundle\Behat\Element\Form
+      options:
+        mapping:
+          Type: 'oro_integration_channel_form[type]'
+          Name: 'oro_integration_channel_form[name]'
+          User Information Username:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[mappingSettings][userMapping][username]"]'
+          LDAP Role Name 2:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[mappingSettings][roleMapping][1][ldapName]"]'
+          CRM Role Names 2:
+            type: xpath
+            locator: '//div[@id[starts-with(.,"s2id_oro_integration_channel_form_mappingSettings_roleMapping_1_crmRoles-uid")]]//input'
+          NoCard Label:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][labels][values][default]"]'
+          NoCard Short Label:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][shortLabels][values][default]"]'
+          CreditCard Label:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][creditCardLabels][values][default]"]'
+          CreditCard Short Label:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][creditCardShortLabels][values][default]"]'
+          Express Name:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][expressCheckoutName]"]'
+          Express Label:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][expressCheckoutLabels][values][default]"]'
+          Express Short Label:
+            type: xpath
+            locator: '//input[@name="oro_integration_channel_form[transport][expressCheckoutShortLabels][values][default]"]'
+          Express Payment Action:
+            type: xpath
+            locator: '//select[@name="oro_integration_channel_form[transport][expressCheckoutPaymentAction]"]'
+
+    E2E Payment Rule Form:
+      selector: "form[id^='oro_payment_methods_configs_rule-uid']"
+      class: Oro\Bundle\TestFrameworkBundle\Behat\Element\Form
+      options:
+        mapping:
+          Method:
+            type: 'xpath'
+            locator: '//h4[text()="Payment Method Configurations"]/..//a[text()="Add"]/..//select[@name="oro_payment_methods_configs_rule[method]"]'
+
+    E2E Shipping Rule Form:
+      selector: 'form[name="oro_shipping_methods_configs_rule"]'
+      class: Oro\Bundle\TestFrameworkBundle\Behat\Element\Form
+      options:
+        mapping:
+          Method:
+            type: 'xpath'
+            locator: '//select[@name="oro_shipping_methods_configs_rule[method]"]'
+          Method Config Enabled:
+            locator: '//input[@name="oro_shipping_methods_configs_rule[methodConfigs][0][typeConfigs][0][enabled]"]'
+            type: xpath
+
+    Add Payment Rule Method:
+      selector:
+        locator: '//h4[text()="Payment Method Configurations"]/..//a[text()="Add"]'
+        type: xpath
+
+    Add Shipping Rule Method:
+      selector:
+        locator: '//h4[text()="Shipping Method Configurations"]/..//a[contains(text(),"Add") and @class="btn add-method"]'
+        type: xpath
+
+    Shipping Rule Method First Enabled:
+      selector:
+        locator: '//input[@name="oro_shipping_methods_configs_rule[methodConfigs][0][typeConfigs][0][enabled]"]'
+        type: xpath
+
+    Shipping Rule Method First Handling Fee:
+      selector:
+        locator: '//input[@name="oro_shipping_methods_configs_rule[methodConfigs][0][typeConfigs][0][options][handling_fee]"]'
+        type: xpath
