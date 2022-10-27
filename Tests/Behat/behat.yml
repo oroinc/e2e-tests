@@ -15,6 +15,14 @@ oro_behat_extension:
         - Oro\Bundle\NavigationBundle\Tests\Behat\Context\FeatureContext
         - Oro\Bundle\LocaleBundle\Tests\Behat\Context\LocalizationContext
         - Oro\Bundle\ActivityListBundle\Tests\Behat\Context\ActivityContext
+        - Oro\Bundle\ApplicationBundle\Tests\Behat\Context\CommerceMainContext
+        - Oro\Bundle\ProductBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\AttachmentBundle\Tests\Behat\Context\AttachmentImageContext
+        - Oro\Bundle\ProductBundle\Tests\Behat\Context\FrontendProductGridContext
+        - Oro\Bundle\ShoppingListBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\CheckoutBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\OrganizationProBundle\Tests\Behat\Context\FeatureContext
+        - Oro\Bundle\CookieConsentBundle\Tests\Behat\Context\FeatureContext
       paths:
         - '@OroE2eTestBundle/Tests/Behat/Features'
 
@@ -99,4 +107,9 @@ oro_behat_extension:
     Shipping Rule Method First Handling Fee:
       selector:
         locator: '//input[@name="oro_shipping_methods_configs_rule[methodConfigs][0][typeConfigs][0][options][handling_fee]"]'
+        type: xpath
+
+    Lighting Products menu item:
+      selector:
+        locator: '//span[@class="main-menu__text"][text()="Clearance"]/../..//li[@class="main-menu-column__item"]/a[text()="Lighting  Products"]'
         type: xpath
