@@ -6,6 +6,18 @@ Feature: Checkout with registered customer
       | Admin | first_session  |
       | User  | second_session |
 
+  Scenario: Precondition
+    Given I proceed as the Admin
+    And I login as administrator
+    And I close organization notice
+    And go to System/ Configuration
+    And follow "Commerce/Inventory/Product Options" on configuration sidebar
+    And fill "Product Option Form" with:
+      | Backorders Default | false |
+      | Backorders         | Yes   |
+    And I save setting
+    Then I should see "Configuration saved" flash message
+
   Scenario:
     Given I proceed as the User
     And I am on the homepage
@@ -40,10 +52,14 @@ Feature: Checkout with registered customer
 
   Scenario: Clear all data
     Given I proceed as the Admin
-    And I login as administrator
-    And I close organization notice
     When go to Sales/Orders
     And filter PO Number as is equal to "P777155"
     When I click delete "P777155" in grid
     And I confirm deletion
     Then should see "Order deleted" flash message
+    And go to System/ Configuration
+    And follow "Commerce/Inventory/Product Options" on configuration sidebar
+    And fill "Product Option Form" with:
+      | Backorders Default | true |
+    And I save setting
+    Then I should see "Configuration saved" flash message
