@@ -111,5 +111,5 @@ oro_behat_extension:
 
     Lighting Products menu item:
       selector:
-        locator: '//span[contains(@class, "main-menu__button-text")][text()="Clearance"]/../../..//li[contains(@class, "main-menu-column__item")]//a[contains(text(),"Lighting  Products")]'
+        locator: '//span[contains(@class, "main-menu__text-label")][text()="Clearance"]/../../..//li[contains(@class, "main-menu-column__item")]//a[contains(text(),"Lighting  Products")]'
         type: xpath
