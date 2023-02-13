@@ -14,6 +14,7 @@ Feature: Admin customer user can create, update, delete child customer user
     And follow "Account"
     And click "Roles"
     When click edit "Buyer" in grid
+    And I wait for 1 seconds
     And fill form with:
       | Role Title | NewByerRole |
     And I uncheck LoisLLessard@example.org record in grid
