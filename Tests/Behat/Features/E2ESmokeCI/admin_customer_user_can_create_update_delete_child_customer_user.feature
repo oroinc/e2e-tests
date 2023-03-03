@@ -6,19 +6,62 @@ Feature: Admin customer user can create, update, delete child customer user
       | Admin | first_session  |
       | User  | second_session |
 
+  Scenario: Create customer and customer user with Administrator privileges
+    Given I proceed as the Admin
+    And I login as administrator
+    When go to Customers/ Customers
+    And click "Create Customer"
+    And fill "Customer Form" with:
+      | Name | Third e2e Customer |
+    And save and close form
+    Then should see "Customer has been saved" flash message
+
+    When go to Customers/ Customer Users
+    And click "Create Customer User"
+    And fill form with:
+      | First Name    | Nancy                     |
+      | Last Name     | Martin e2e                |
+      | Email Address | NancyRMartin1@example.org |
+    And I focus on "Birthday" field
+    And click "Today"
+    And fill form with:
+      | Password         | NancyRMartin1@example.org |
+      | Confirm Password | NancyRMartin1@example.org |
+      | Customer         | Third e2e Customer        |
+    And fill "Customer User Addresses Form" with:
+      | Primary                    | true          |
+      | First Name Add             | Nancy         |
+      | Last Name Add              | Martin e2e    |
+      | Organization               | Smoke Org     |
+      | Country                    | United States |
+      | Street                     | Market St. 12 |
+      | City                       | San Francisco |
+      | State                      | California    |
+      | Zip/Postal Code            | 90001         |
+      | Billing                    | true          |
+      | Shipping                   | true          |
+      | Default Billing            | true          |
+      | Default Shipping           | true          |
+      | Administrator (Predefined) | true          |
+    And save and close form
+    Then should see "Customer User has been saved" flash message
+
   Scenario: Customer User with Administrator privileges create/update/block/delete new Customer User
     Given I proceed as the Admin
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
-    And I signed in as AmandaRCole@example.org on the store frontend in old session
+    And I signed in as NancyRMartin1@example.org on the store frontend in old session
     And follow "Account"
     And click "Roles"
-    When click edit "Buyer" in grid
-    And I wait for 1 seconds
-    And fill form with:
-      | Role Title | NewByerRole |
-    And I uncheck LoisLLessard@example.org record in grid
-    And I uncheck BrandaJSanborn@example.org record in grid
+    When click "Create Customer User Role"
+    And I fill "CustomerUserRoleForm" with:
+      | Role Title | e2e Buyer Role |
+    And I select customer user role permissions:
+      | Checkout                | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
+      | Customer User Address   | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
+      | Order                   | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
+      | Shopping List           | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
+      | Shopping List Line Item | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
     And I click on "Second Save Button"
     Then should see "Customer User Role has been saved" flash message
 
@@ -33,21 +76,21 @@ Feature: Admin customer user can create, update, delete child customer user
     And should see that "Password" contains "Enter your new password" placeholder
     And should see that "Confirm Password" contains "Enter password confirmation" placeholder
     When fill form with:
-      | Email Address              | TestUser1@test.com |
-      | First Name                 | TestF              |
-      | Last Name                  | TestL              |
-      | Password                   | TestUser1@test.com |
-      | Confirm Password           | TestUser1@test.com |
-      | NewByerRole (Customizable) | true               |
+      | Email Address                 | TestUser1@test.com |
+      | First Name                    | TestF              |
+      | Last Name                     | TestL e2e          |
+      | Password                      | TestUser1@test.com |
+      | Confirm Password              | TestUser1@test.com |
+      | e2e Buyer Role (Customizable) | true               |
     And click "Save"
     Then should see "Customer User has been saved" flash message
 
     When click "Address Book"
     And click "New Address"
     And fill form with:
-      | User            | TestF TestL     |
+      | User            | TestF TestL e2e |
       | First Name      | TestF           |
-      | Last Name       | TestL           |
+      | Last Name       | TestL e2e       |
       | Organization    | OroCommerce     |
       | Country         | United States   |
       | Street          | Parnasus Ave 13 |
@@ -61,7 +104,7 @@ Feature: Admin customer user can create, update, delete child customer user
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
     And I signed in as TestUser1@test.com on the store frontend in old session
-    Then should see "Signed in as: TestF TestL"
+    Then should see "Signed in as: TestF TestL e2e"
     And follow "Account"
     When click "Address Book"
     Then I should see following "Customer Company User Addresses Grid" grid:
@@ -115,5 +158,27 @@ Feature: Admin customer user can create, update, delete child customer user
     And should not see "TestUser1@test.com"
     And follow "Account"
     And click "Roles"
-    When click delete "NewByerRole" in grid
+    When click delete "e2e Buyer Role" in grid
     Then should see "Customer User Role deleted" flash message
+
+  Scenario: Clear data in back-office
+    Given I proceed as the User
+    And I login as administrator
+
+    When go to Customers/ Customer Users
+    And I filter "Email Address" as Contains "NancyRMartin1@example.org"
+    And I click delete 'NancyRMartin1@example.org' in grid
+    And click "Yes, Delete"
+    Then should see "Customer User deleted" flash message
+
+    When go to Customers/ Accounts
+    And I filter "Account name" as Contains "Third e2e Customer"
+    And I click delete 'Third e2e Customer' in grid
+    And click "Yes, Delete"
+    Then should see "Item deleted" flash message
+
+    When go to Customers/ Customers
+    And I filter "Name" as Contains "Third e2e Customer"
+    And I click delete 'Third e2e Customer' in grid
+    And click "Yes, Delete"
+    Then should see "Customer deleted" flash message

@@ -6,37 +6,43 @@ Feature: Create delete customer, customer user and related actions
       | Admin | first_session  |
       | User  | second_session |
 
-  Scenario: Create customer
+  Scenario: Create Payment Term and Customer
     Given I proceed as the Admin
     And I login as administrator
     And I close organization notice
+
+    When go to Sales/ Payment terms
+    And click "Create Payment Term"
+    And type "net_10_e2e" in "Label"
+    And save and close form
+
     When go to Customers/ Customers
     And click "Create Customer"
     And fill "Customer Form" with:
-      | Name         | Smoke Customer     |
+      | Name         | e2e Customer       |
       | Price List   | Default Price List |
-      | Payment Term | net_10             |
+      | Payment Term | net_10_e2e         |
     And save and close form
     Then should see "Customer has been saved" flash message
 
-  Scenario: Create customer user from the Admin panel (add address)
+  Scenario: Create customer user with address from the back-office
     When go to Customers/ Customer Users
     And click "Create Customer User"
     And fill form with:
       | First Name    | Branda                      |
-      | Last Name     | Sanborn                     |
+      | Last Name     | Sanborn e2e                 |
       | Email Address | BrandaJSanborn1@example.org |
     And I focus on "Birthday" field
     And click "Today"
     And fill form with:
       | Password         | BrandaJSanborn1@example.org |
       | Confirm Password | BrandaJSanborn1@example.org |
-      | Customer         | Smoke Customer              |
+      | Customer         | e2e Customer                |
     And fill "Customer User Addresses Form" with:
       | Primary                    | true          |
       | First Name Add             | Branda        |
-      | Last Name Add              | Sanborn       |
-      | Organization               | Smoke Org     |
+      | Last Name Add              | Sanborn e2e   |
+      | Organization               | e2e Org       |
       | Country                    | United States |
       | Street                     | Market St. 12 |
       | City                       | San Francisco |
@@ -50,7 +56,7 @@ Feature: Create delete customer, customer user and related actions
     And save and close form
     Then should see "Customer User has been saved" flash message
 
-  Scenario: Create customer and customer user from the frontstore
+  Scenario: Create customer and customer user from the storefront
     Given I proceed as the User
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
@@ -65,9 +71,9 @@ Feature: Create delete customer, customer user and related actions
     And should see that "Password" contains "Enter your password" placeholder
     And should see that "Confirm Password" contains "Reenter your password" placeholder
     And I fill "Registration Form" with:
-      | Company Name     | OroCommerce              |
+      | Company Name     | OroCommerce e2e          |
       | First Name       | Amanda                   |
-      | Last Name        | Cole                     |
+      | Last Name        | Cole e2e                 |
       | Email Address    | AmandaRCole1@example.org |
       | Password         | AmandaRCole1@example.org |
       | Confirm Password | AmandaRCole1@example.org |
@@ -88,9 +94,9 @@ Feature: Create delete customer, customer user and related actions
     And click view "AmandaRCole1@example.org" in grid
     And click "Confirm"
     And go to Customers/ Customers
-    And click edit "OroCommerce" in grid
+    And click edit "OroCommerce e2e" in grid
     And fill form with:
-      | Payment Term | net_10 |
+      | Payment Term | net_10_e2e |
     And save and close form
 
     When I proceed as the User
@@ -98,7 +104,7 @@ Feature: Create delete customer, customer user and related actions
       | Email Address | AmandaRCole1@example.org |
       | Password      | AmandaRCole1@example.org |
     And click "Sign In"
-    Then should see "Signed in as: Amanda Cole"
+    Then should see "Signed in as: Amanda Cole e2e"
     And click "Sign Out"
 
   Scenario: Clear all data
@@ -107,10 +113,36 @@ Feature: Create delete customer, customer user and related actions
     And I click delete 'BrandaJSanborn1@example.org' in grid
     And click "Yes, Delete"
     Then should see "Customer User deleted" flash message
+
     And I click delete 'AmandaRCole1@example.org' in grid
     And click "Yes, Delete"
     Then should see "Customer User deleted" flash message
+
     When go to Customers/ Customers
-    And I click delete 'Smoke Customer' in grid
+    And I filter "Name" as Contains "e2e Customer"
+    And I click delete 'e2e Customer' in grid
     And click "Yes, Delete"
     Then should see "Customer deleted" flash message
+
+    When go to Customers/ Customers
+    And I filter "Name" as Contains "OroCommerce e2e"
+    And I click delete 'OroCommerce e2e' in grid
+    And click "Yes, Delete"
+    Then should see "Customer deleted" flash message
+
+    When go to Customers/ Accounts
+    And I filter "Account name" as Contains "e2e Customer"
+    And I click delete 'e2e Customer' in grid
+    And click "Yes, Delete"
+    Then should see "Item deleted" flash message
+
+    When go to Customers/ Accounts
+    And I filter "Account name" as Contains "OroCommerce e2e"
+    And I click delete 'OroCommerce e2e' in grid
+    And click "Yes, Delete"
+    Then should see "Item deleted" flash message
+
+    When go to Sales/ Payment terms
+    And I click delete 'net_10_e2e' in grid
+    And click "Yes"
+    Then should see "Payment Term deleted" flash message
