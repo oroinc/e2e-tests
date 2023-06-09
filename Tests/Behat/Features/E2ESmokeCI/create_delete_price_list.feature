@@ -146,6 +146,7 @@ Feature: Create delete price list
       | Name       | e2e Group                   |
       | Fallback   | Current customer group only |
       | Price List | FirstPriceList_e2e          |
+    And I click "Customers" in scrollspy
     And click on e2e Customer in grid
     And save and close form
     Then should see "Customer group has been saved" flash message
