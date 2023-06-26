@@ -130,7 +130,7 @@ Feature: Create delete webcatalog
     When I go to Marketing/ Web Catalogs
     And click delete "e2e Catalog" in grid
     And click "Yes, Delete"
-    Then I should see "Web Catalog deleted"
+    Then I should see "Web Catalog deleted" flash message
 
     When I go to Products/ Master Catalog
     And I click "Lighting Products e2e"
