@@ -26,7 +26,7 @@ Feature: Create delete price list
     When set Additional Unit with:
       | Unit | Precision | Rate |
       | each | 2         | 5    |
-    And I check "oro_product[additionalUnitPrecisions][0][sell]"
+    And I check "ProductAdditionalSellField" element
     And click "AddPrice"
     And fill "Product Price Form" with:
       | Price List | Default Price List |
@@ -52,7 +52,7 @@ Feature: Create delete price list
     When set Additional Unit with:
       | Unit | Precision | Rate |
       | each | 2         | 5    |
-    And I check "oro_product[additionalUnitPrecisions][0][sell]"
+    And I check "ProductAdditionalSellField" element
     And click "AddPrice"
     And fill "Product Price Form" with:
       | Price List | Default Price List |
