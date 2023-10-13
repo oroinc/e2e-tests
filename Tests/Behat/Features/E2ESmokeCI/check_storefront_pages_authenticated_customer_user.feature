@@ -9,7 +9,6 @@ Feature: Check storefront pages authenticated customer user
   Scenario: Create customer, customer user and product
     Given I proceed as the Admin
     And I login as administrator
-    And I close organization notice
     When go to Customers/ Customers
     And click "Create Customer"
     And fill "Customer Form" with:
