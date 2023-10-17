@@ -9,7 +9,6 @@ Feature: Create delete customer, customer user and related actions
   Scenario: Create Payment Term and Customer
     Given I proceed as the Admin
     And I login as administrator
-    And I close organization notice
 
     When go to Sales/ Payment terms
     And click "Create Payment Term"

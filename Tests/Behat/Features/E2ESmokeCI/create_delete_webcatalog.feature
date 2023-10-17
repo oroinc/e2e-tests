@@ -9,7 +9,6 @@ Feature: Create delete webcatalog
   Scenario: Create categories in master catalog and content nodes in webcatalog
     Given I proceed as the Admin
     And I login as administrator
-    And I close organization notice
     When I go to Marketing/ Web Catalogs
     And I click "Create Web Catalog"
     And I type "e2e Catalog" in "Name"

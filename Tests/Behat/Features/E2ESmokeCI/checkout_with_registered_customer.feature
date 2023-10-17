@@ -9,7 +9,6 @@ Feature: Checkout with registered customer
   Scenario: Precondition
     Given I proceed as the Admin
     And I login as administrator
-    And I close organization notice
     And go to System/ Configuration
     And follow "Commerce/Inventory/Product Options" on configuration sidebar
     And fill "Product Option Form" with:
