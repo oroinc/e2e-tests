@@ -120,9 +120,10 @@ Feature: Create delete price list
     And I focus on "Birthday" field
     And click "Today"
     And fill form with:
-      | Password         | BrandaJSanborn1@example.org |
-      | Confirm Password | BrandaJSanborn1@example.org |
-      | Customer         | e2e Customer                |
+      | Password                   | BrandaJSanborn1@example.org |
+      | Confirm Password           | BrandaJSanborn1@example.org |
+      | Customer                   | e2e Customer                |
+      | Administrator (Predefined) | true                        |
     And fill "Customer User Addresses Form" with:
       | Primary                    | true          |
       | First Name Add             | Branda        |
@@ -137,7 +138,6 @@ Feature: Create delete price list
       | Shipping                   | true          |
       | Default Billing            | true          |
       | Default Shipping           | true          |
-      | Administrator (Predefined) | true          |
     And save and close form
     Then should see "Customer User has been saved" flash message
     When go to Customers/ Customer Groups

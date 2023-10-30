@@ -25,9 +25,10 @@ Feature: Admin customer user can create, update, delete child customer user
     And I focus on "Birthday" field
     And click "Today"
     And fill form with:
-      | Password         | NancyRMartin1@example.org |
-      | Confirm Password | NancyRMartin1@example.org |
-      | Customer         | Third e2e Customer        |
+      | Password                   | NancyRMartin1@example.org |
+      | Confirm Password           | NancyRMartin1@example.org |
+      | Customer                   | Third e2e Customer        |
+      | Administrator (Predefined) | true                      |
     And fill "Customer User Addresses Form" with:
       | Primary                    | true          |
       | First Name Add             | Nancy         |
@@ -42,7 +43,6 @@ Feature: Admin customer user can create, update, delete child customer user
       | Shipping                   | true          |
       | Default Billing            | true          |
       | Default Shipping           | true          |
-      | Administrator (Predefined) | true          |
     And save and close form
     Then should see "Customer User has been saved" flash message
 

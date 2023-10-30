@@ -76,7 +76,7 @@ oro_behat_extension:
         mapping:
           Method:
             type: 'xpath'
-            locator: '//h4[text()="Payment Method Configurations"]/..//a[text()="Add"]/..//select[@name="oro_payment_methods_configs_rule[method]"]'
+            locator: '//select[@name="oro_payment_methods_configs_rule[method]"]'
 
     E2E Shipping Rule Form:
       selector: 'form[name="oro_shipping_methods_configs_rule"]'
@@ -92,12 +92,12 @@ oro_behat_extension:
 
     Add Payment Rule Method:
       selector:
-        locator: '//h4[text()="Payment Method Configurations"]/..//a[text()="Add"]'
+        locator: '//h4/..//a[@class="btn add-method"]'
         type: xpath
 
     Add Shipping Rule Method:
       selector:
-        locator: '//h4[text()="Shipping Method Configurations"]/..//a[contains(text(),"Add") and @class="btn add-method"]'
+        locator: '//h4/..//a[@class="btn add-method"]'
         type: xpath
 
     Shipping Rule Method First Enabled:

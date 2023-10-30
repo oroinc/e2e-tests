@@ -41,24 +41,24 @@ Feature: Checkout with registered customer
     And I focus on "Birthday" field
     And click "Today"
     And fill form with:
-      | Password         | BrandaJSanborn1@example.org |
-      | Confirm Password | BrandaJSanborn1@example.org |
-      | Customer         | e2e Customer                |
+      | Password           | BrandaJSanborn1@example.org |
+      | Confirm Password   | BrandaJSanborn1@example.org |
+      | Customer           | e2e Customer                |
+      | Buyer (Predefined) | true                        |
     And fill "Customer User Addresses Form" with:
-      | Primary            | true          |
-      | First Name Add     | Branda        |
-      | Last Name Add      | Sanborn e2e   |
-      | Organization       | e2e Org       |
-      | Country            | United States |
-      | Street             | Market St. 12 |
-      | City               | San Francisco |
-      | State              | California    |
-      | Zip/Postal Code    | 90001         |
-      | Billing            | true          |
-      | Shipping           | true          |
-      | Default Billing    | true          |
-      | Default Shipping   | true          |
-      | Buyer (Predefined) | true          |
+      | Primary          | true          |
+      | First Name Add   | Branda        |
+      | Last Name Add    | Sanborn e2e   |
+      | Organization     | e2e Org       |
+      | Country          | United States |
+      | Street           | Market St. 12 |
+      | City             | San Francisco |
+      | State            | California    |
+      | Zip/Postal Code  | 90001         |
+      | Billing          | true          |
+      | Shipping         | true          |
+      | Default Billing  | true          |
+      | Default Shipping | true          |
     And save and close form
     Then should see "Customer User has been saved" flash message
 
