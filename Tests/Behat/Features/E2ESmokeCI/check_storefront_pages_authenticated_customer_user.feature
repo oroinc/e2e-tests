@@ -26,9 +26,10 @@ Feature: Check storefront pages authenticated customer user
     And I focus on "Birthday" field
     And click "Today"
     And fill form with:
-      | Password         | JamesJMaxwell1@example.org |
-      | Confirm Password | JamesJMaxwell1@example.org |
-      | Customer         | Second e2e Customer        |
+      | Password           | JamesJMaxwell1@example.org |
+      | Confirm Password   | JamesJMaxwell1@example.org |
+      | Customer           | Second e2e Customer        |
+      | Buyer (Predefined) | true                       |
     And fill "Customer User Addresses Form" with:
       | Primary            | true          |
       | First Name Add     | James         |
@@ -43,7 +44,6 @@ Feature: Check storefront pages authenticated customer user
       | Shipping           | true          |
       | Default Billing    | true          |
       | Default Shipping   | true          |
-      | Buyer (Predefined) | true          |
     And save and close form
     Then should see "Customer User has been saved" flash message
 
