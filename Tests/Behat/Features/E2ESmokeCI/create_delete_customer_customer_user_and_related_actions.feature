@@ -103,7 +103,8 @@ Feature: Create delete customer, customer user and related actions
       | Email Address | AmandaRCole1@example.org |
       | Password      | AmandaRCole1@example.org |
     And click "Sign In"
-    Then should see "Signed in as: Amanda Cole e2e"
+    Then should see "Amanda Cole e2e"
+    And I click "Account Dropdown"
     And click "Sign Out"
 
   Scenario: Clear all data
