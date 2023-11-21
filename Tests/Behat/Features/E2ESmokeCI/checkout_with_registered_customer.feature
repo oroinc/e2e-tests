@@ -112,7 +112,7 @@ Feature: Checkout with registered customer
       | Name       | Flat Rate e2e |
       | Sort Order | 10            |
       | Currency   | $             |
-      | Method     | Flat_Rate_e2e |
+      | Method     | Flat Rate e2e |
     And fill form with:
       | Price | 10 |
     And save and close form
