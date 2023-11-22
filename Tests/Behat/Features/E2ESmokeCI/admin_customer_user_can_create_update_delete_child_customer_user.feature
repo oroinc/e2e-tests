@@ -64,7 +64,7 @@ Feature: Admin customer user can create, update, delete child customer user
       | Shopping List Line Item | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
     And I click on "Second Save Button"
     Then should see "Customer User Role has been saved" flash message
-
+    And click on "Flash Message Close Button"
     And I click "Account Dropdown"
     And click "Users"
     And click "Create User"
@@ -85,6 +85,7 @@ Feature: Admin customer user can create, update, delete child customer user
       | e2e Buyer Role (Customizable) | true               |
     And click "Save"
     Then should see "Customer User has been saved" flash message
+    And click on "Flash Message Close Button"
 
     And I click "Account Dropdown"
     And click "Address Book"
@@ -132,6 +133,7 @@ Feature: Admin customer user can create, update, delete child customer user
       | Name Prefix | Test Prefix |
     And click "Save"
     Then should see "Customer User has been saved" flash message
+    And click on "Flash Message Close Button"
 
     And I click "Account Dropdown"
     And click "Users"
