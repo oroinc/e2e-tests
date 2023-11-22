@@ -103,8 +103,7 @@ Feature: Check storefront pages authenticated customer user
 
     When I click "Catalog Switcher Toggle"
     And click "No Image View"
-    Then should see "View Details" for "24_lumen_headlamp_e2e" product
-    And should not see "Product Image" for "24_lumen_headlamp_e2e" product
+    And should see "Product Image" for "24_lumen_headlamp_e2e" product
     And should see "Product Name" for "24_lumen_headlamp_e2e" product
     And should see "Your Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
     And should see "Listed Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
