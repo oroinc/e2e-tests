@@ -73,7 +73,7 @@ Feature: Check storefront pages authenticated customer user
     And I am on the homepage
     And I login as JamesJMaxwell1@example.org buyer
     And I click "Accept Cookie Banner" if present
-    When click "About"
+    When click "About" in hamburger menu
     Then Page title equals to "About"
     When I type "24_lumen_headlamp_e2e" in "search"
     And I click "Search Button"

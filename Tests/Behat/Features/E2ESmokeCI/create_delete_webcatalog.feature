@@ -106,13 +106,13 @@ Feature: Create delete webcatalog
     Given I proceed as the User
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
-    When I click "Lighting Products e2e"
+    When I click "Lighting Products e2e" in hamburger menu
     And filter Any Text as contains "220 Lumen"
     Then I should see "220_lumen_headlamp_e2e" product
     And should not see "blood_pressure_monitors_e2e" product
     And click "Reset Any Text filter"
 
-    When I click "Medical e2e"
+    When I click "Medical e2e" in hamburger menu
     When filter SKU as is equal to "blood_pressure_monitors_e2e"
     Then I should not see "220_lumen_headlamp_e2e" product
     And should see "blood_pressure_monitors_e2e" product
