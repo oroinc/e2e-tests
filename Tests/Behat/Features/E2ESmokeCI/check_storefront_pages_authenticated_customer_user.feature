@@ -91,7 +91,6 @@ Feature: Check storefront pages authenticated customer user
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
-    When I click "Catalog Switcher Toggle"
     And click "Gallery View"
     Then should not see "View Details" for "24_lumen_headlamp_e2e" product
     And should see "Product Image" for "24_lumen_headlamp_e2e" product
@@ -101,8 +100,7 @@ Feature: Check storefront pages authenticated customer user
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
-    When I click "Catalog Switcher Toggle"
-    And click "No Image View"
+    And click "Compact View"
     And should see "Product Image" for "24_lumen_headlamp_e2e" product
     And should see "Product Name" for "24_lumen_headlamp_e2e" product
     And should see "Your Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
@@ -110,7 +108,6 @@ Feature: Check storefront pages authenticated customer user
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
-    When I click "Catalog Switcher Toggle"
     Then click "List View"
     When I hover on "Shopping Cart"
     And I click "Shopping List" on shopping list widget
