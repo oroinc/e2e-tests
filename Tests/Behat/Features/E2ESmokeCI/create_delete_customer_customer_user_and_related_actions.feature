@@ -59,7 +59,7 @@ Feature: Create delete customer, customer user and related actions
     Given I proceed as the User
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
-    When click "Sign In"
+    When click "Log In"
     Then should see that "Email Address" contains "name@domain.com" placeholder
     And should see that "Password" contains "Enter your password" placeholder
     When click "Create An Account"
@@ -84,7 +84,7 @@ Feature: Create delete customer, customer user and related actions
     When fill form with:
       | Email Address | AmandaRCole1@example.org |
       | Password      | AmandaRCole1@example.org |
-    And click "Sign In"
+    And click "Log In"
     Then I should see "Your login was unsuccessful. Please check your e-mail address and password before trying again."
 
   Scenario: Activate customer user and login with activated customer
@@ -102,7 +102,7 @@ Feature: Create delete customer, customer user and related actions
     And fill form with:
       | Email Address | AmandaRCole1@example.org |
       | Password      | AmandaRCole1@example.org |
-    And click "Sign In"
+    And click "Log In"
     Then should see "Amanda Cole e2e"
     And I click "Account Dropdown"
     And click "Sign Out"
