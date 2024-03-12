@@ -51,7 +51,7 @@ Feature: Admin customer user can create, update, delete child customer user
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
     And I signed in as NancyRMartin1@example.org on the store frontend in old session
-    And follow "Account"
+    And I click "Account Dropdown"
     And click "Roles"
     When click "Create Customer User Role"
     And I fill "CustomerUserRoleForm" with:
@@ -64,8 +64,9 @@ Feature: Admin customer user can create, update, delete child customer user
       | Shopping List Line Item | View:User (Own) | Create:User (Own) | Edit:User (Own) | Delete:User (Own) | Assign:User (Own) |
     And I click on "Second Save Button"
     Then should see "Customer User Role has been saved" flash message
-
-    When click "Users"
+    And click on "Flash Message Close Button"
+    And I click "Account Dropdown"
+    And click "Users"
     And click "Create User"
     Then should see that "Email Address" contains "Enter your email" placeholder
     And should see that "Name Prefix" contains "Enter your name prefix" placeholder
@@ -84,8 +85,10 @@ Feature: Admin customer user can create, update, delete child customer user
       | e2e Buyer Role (Customizable) | true               |
     And click "Save"
     Then should see "Customer User has been saved" flash message
+    And click on "Flash Message Close Button"
 
-    When click "Address Book"
+    And I click "Account Dropdown"
+    And click "Address Book"
     And click "New Address"
     And fill form with:
       | User            | TestF TestL e2e |
@@ -104,16 +107,17 @@ Feature: Admin customer user can create, update, delete child customer user
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
     And I signed in as TestUser1@test.com on the store frontend in old session
-    Then should see "Signed in as: TestF TestL e2e"
-    And follow "Account"
+    Then should see "TestF TestL e2e"
+    And I click "Account Dropdown"
     When click "Address Book"
     Then I should see following "Customer Company User Addresses Grid" grid:
       | Customer Address | City          | State      | Zip/Postal Code | Country       |
       | Parnasus Ave 13  | San Francisco | California | 90001           | United States |
+    And I click "Account Dropdown"
     And click "Sign Out"
 
     When I proceed as the Admin
-    And follow "Account"
+    And I click "Account Dropdown"
     And click "Users"
     And click disable "TestUser1@test.com" in grid
     And I proceed as the User
@@ -121,7 +125,7 @@ Feature: Admin customer user can create, update, delete child customer user
     Then I should see "Your login was unsuccessful. Please check your e-mail address and password before trying again."
     And I proceed as the Admin
 
-    When follow "Account"
+    And I click "Account Dropdown"
     And click "Users"
     And click edit "TestUser1@test.com" in grid
     And fill form with:
@@ -129,8 +133,10 @@ Feature: Admin customer user can create, update, delete child customer user
       | Name Prefix | Test Prefix |
     And click "Save"
     Then should see "Customer User has been saved" flash message
+    And click on "Flash Message Close Button"
 
-    When click "Users"
+    And I click "Account Dropdown"
+    And click "Users"
     And click view "TestUser1@test.com" in grid
     And click "Edit User Address"
     And fill form with:
@@ -140,15 +146,16 @@ Feature: Admin customer user can create, update, delete child customer user
     Then I should see "Customer User Address has been saved" flash message
     And I proceed as the User
     And I signed in as TestUser1@test.com on the store frontend in old session
-    And follow "Account"
+    And I click "Account Dropdown"
 
     When click "Address Book"
     Then I should see following "Customer Company User Addresses Grid" grid:
       | Customer Address | City          | State      | Zip/Postal Code | Country       |
       | Parnasus Ave 15  | San Francisco | California | 90002           | United States |
+    And I click "Account Dropdown"
     And click "Sign Out"
     And I proceed as the Admin
-    And follow "Account"
+    And I click "Account Dropdown"
 
     When click "Users"
     And click delete "TestUser1@test.com" in grid
@@ -156,7 +163,7 @@ Feature: Admin customer user can create, update, delete child customer user
     Then should see "Customer User deleted" flash message
     And I reload the page
     And should not see "TestUser1@test.com"
-    And follow "Account"
+    And I click "Account Dropdown"
     And click "Roles"
     When click delete "e2e Buyer Role" in grid
     Then should see "Customer User Role deleted" flash message

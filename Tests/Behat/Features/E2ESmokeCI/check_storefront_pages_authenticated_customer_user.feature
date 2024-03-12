@@ -73,7 +73,7 @@ Feature: Check storefront pages authenticated customer user
     And I am on the homepage
     And I login as JamesJMaxwell1@example.org buyer
     And I click "Accept Cookie Banner" if present
-    When click "About"
+    When click "About" in hamburger menu
     Then Page title equals to "About"
     When I type "24_lumen_headlamp_e2e" in "search"
     And I click "Search Button"
@@ -91,7 +91,6 @@ Feature: Check storefront pages authenticated customer user
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
-    When I click "Catalog Switcher Toggle"
     And click "Gallery View"
     Then should not see "View Details" for "24_lumen_headlamp_e2e" product
     And should see "Product Image" for "24_lumen_headlamp_e2e" product
@@ -101,17 +100,14 @@ Feature: Check storefront pages authenticated customer user
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
-    When I click "Catalog Switcher Toggle"
-    And click "No Image View"
-    Then should see "View Details" for "24_lumen_headlamp_e2e" product
-    And should not see "Product Image" for "24_lumen_headlamp_e2e" product
+    And click "Compact View"
+    And should see "Product Image" for "24_lumen_headlamp_e2e" product
     And should see "Product Name" for "24_lumen_headlamp_e2e" product
     And should see "Your Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
     And should see "Listed Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
-    When I click "Catalog Switcher Toggle"
     Then click "List View"
     When I hover on "Shopping Cart"
     And I click "Shopping List" on shopping list widget
