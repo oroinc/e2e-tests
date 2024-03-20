@@ -17,10 +17,10 @@ Feature: Create delete webcatalog
 
     When I click "Edit Content Tree"
     And I click on "Show Variants Dropdown"
-    And I click "Add System Page"
+    And I click "Add Landing Page"
     And I fill "Content Node Form" with:
-      | Titles            | Root Node                               |
-      | System Page Route | Oro Frontend Root (Welcome - Home page) |
+      | Titles       | Root Node |
+      | Landing Page | Homepage  |
     And I save form
     Then I should see "Content Node has been saved" flash message
 
