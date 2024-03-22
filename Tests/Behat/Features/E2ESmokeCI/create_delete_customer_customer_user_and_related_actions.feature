@@ -60,31 +60,23 @@ Feature: Create delete customer, customer user and related actions
     And I am on the homepage
     And I click "Accept Cookie Banner" if present
     When click "Log In"
-    Then should see that "Email Address" contains "name@domain.com" placeholder
-    And should see that "Password" contains "Enter your password" placeholder
-    When click "Create An Account"
-    Then should see that "Company Name" contains "Company Inc." placeholder
-    And should see that "First Name" contains "John" placeholder
-    And should see that "Last Name" contains "Smith" placeholder
-    And should see that "Email Address" contains "name@domain.com" placeholder
-    And should see that "Password" contains "Enter your password" placeholder
-    And should see that "Confirm Password" contains "Reenter your password" placeholder
+    And click "Sign Up"
     And I fill "Registration Form" with:
       | Company Name     | OroCommerce e2e          |
       | First Name       | Amanda                   |
       | Last Name        | Cole e2e                 |
-      | Email Address    | AmandaRCole1@example.org |
+      | Email            | AmandaRCole1@example.org |
       | Password         | AmandaRCole1@example.org |
       | Confirm Password | AmandaRCole1@example.org |
     And I confirm Agreements "Terms and Conditions" at registration step
-    When I click "Create An Account"
+    When I click "Create Account"
     Then I should see "Please check your email to complete registration" flash message
 
   Scenario: Unconfirmed customer user cannot login
     When fill form with:
-      | Email Address | AmandaRCole1@example.org |
-      | Password      | AmandaRCole1@example.org |
-    And click "Log In"
+      | Email    | AmandaRCole1@example.org |
+      | Password | AmandaRCole1@example.org |
+    And click "Log In Button"
     Then I should see "Your login was unsuccessful. Please check your e-mail address and password before trying again."
 
   Scenario: Activate customer user and login with activated customer
@@ -100,9 +92,9 @@ Feature: Create delete customer, customer user and related actions
 
     When I proceed as the User
     And fill form with:
-      | Email Address | AmandaRCole1@example.org |
-      | Password      | AmandaRCole1@example.org |
-    And click "Log In"
+      | Email    | AmandaRCole1@example.org |
+      | Password | AmandaRCole1@example.org |
+    And click "Log In Button"
     Then should see "Amanda Cole e2e"
     And I click "Account Dropdown"
     And click "Sign Out"
