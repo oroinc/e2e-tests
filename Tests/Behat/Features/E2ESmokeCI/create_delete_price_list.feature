@@ -160,25 +160,21 @@ Feature: Create delete price list
     When fill line item with "led_blood_pressure_monitors_e2e" in frontend product grid:
       | Quantity | 1    |
       | Unit     | item |
-    And should see "Your Price: $12.00 / item" for "led_blood_pressure_monitors_e2e" product
-    And should see "Listed Price: $12.00 / item" for "led_blood_pressure_monitors_e2e" product
+    And should see "$12.00" for "led_blood_pressure_monitors_e2e" product
     When fill line item with "led_blood_pressure_monitors_e2e" in frontend product grid:
       | Quantity | 10   |
       | Unit     | item |
-    Then should see "Your Price: $12.00 / item" for "led_blood_pressure_monitors_e2e" product
-    And should see "Listed Price: $12.00 / item" for "led_blood_pressure_monitors_e2e" product
+    Then should see "$12.00" for "led_blood_pressure_monitors_e2e" product
     And click "Reset SKU filter"
     When filter SKU as is equal to "500_lumen_headlamp_e2e"
     When fill line item with "500_lumen_headlamp_e2e" in frontend product grid:
       | Quantity | 1    |
       | Unit     | item |
-    And should see "Your Price: $8.792 / item" for "500_lumen_headlamp_e2e" product
-    And should see "Listed Price: $8.792 / item" for "500_lumen_headlamp_e2e" product
+    And should see "$8.792" for "500_lumen_headlamp_e2e" product
     When fill line item with "500_lumen_headlamp_e2e" in frontend product grid:
       | Quantity | 10   |
       | Unit     | item |
-    Then should see "Your Price: $10.00 / item" for "500_lumen_headlamp_e2e" product
-    And should see "Listed Price: $8.792 / item" for "500_lumen_headlamp_e2e" product
+    Then should see "$10.00 $8.792" for "500_lumen_headlamp_e2e" product
     And click "Reset SKU filter"
 
   Scenario: Clear all data

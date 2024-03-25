@@ -83,8 +83,7 @@ Feature: Check storefront pages authenticated customer user
     And should not see "Product Information & Features:" for "24_lumen_headlamp_e2e" product
     And should see "Product_Short_Description" for "24_lumen_headlamp_e2e" product
     And should see "24 Lumen Rechargeable Headlamp e2e" for "24_lumen_headlamp_e2e" product
-    And should see "Your Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
-    And should see "Listed Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
+    And should see "$15.99" for "24_lumen_headlamp_e2e" product
     And filter SKU as is equal to "24_lumen_headlamp_e2e"
     And click "Add to Shopping List" for "24_lumen_headlamp_e2e" product
     And should see "Product has been added to "
@@ -95,16 +94,14 @@ Feature: Check storefront pages authenticated customer user
     Then should not see "View Details" for "24_lumen_headlamp_e2e" product
     And should see "Product Image" for "24_lumen_headlamp_e2e" product
     And should see "Product Name" for "24_lumen_headlamp_e2e" product
-    And should see "Your Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
-    And should see "Listed Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
+    And should see "$15.99" for "24_lumen_headlamp_e2e" product
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
     And click "Compact View"
     And should see "Product Image" for "24_lumen_headlamp_e2e" product
     And should see "Product Name" for "24_lumen_headlamp_e2e" product
-    And should see "Your Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
-    And should see "Listed Price: $15.99 / item" for "24_lumen_headlamp_e2e" product
+    And should see "$15.99" for "24_lumen_headlamp_e2e" product
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
