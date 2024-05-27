@@ -11,9 +11,8 @@ Feature: Create UPS integration
       | Name                    | UPS                                           |
       | NoCard Label            | UPS                                           |
       | Test Mode               | true                                          |
-      | API User                | <Secret:shipping.ups.api_user>                |
-      | API Password            | <Secret:shipping.ups.api_password>            |
-      | API Key                 | <Secret:shipping.ups.api_key>                 |
+      | OAuth Client Id         | <Secret:shipping.ups.client_id>               |
+      | OAuth Client Secret     | <Secret:shipping.ups.client_secret>           |
       | Shipping Account Name   | <Secret:shipping.ups.shipping_account_name>   |
       | Shipping Account Number | <Secret:shipping.ups.shipping_account_number> |
       | Pickup Type             | Regular Daily Pickup                          |
