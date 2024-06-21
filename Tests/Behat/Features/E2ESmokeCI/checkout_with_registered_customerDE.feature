@@ -111,7 +111,7 @@ Feature: Checkout with registered customer
       | Name               | Flat Rate e2e |
       | Sortierreihenfolge | 10            |
       | Währung            | €             |
-      | Method             | Flat_Rate_e2e |
+      | Method             | Flat Rate e2e |
     And I click "Add Shipping Rule Method"
     And fill form with:
       | Preis | 10 |
@@ -145,7 +145,7 @@ Feature: Checkout with registered customer
     And I type "110_lumen_headlamp_e2e" in "search"
     And I click "Search Button"
     And I click "110 Lumen Rechargeable Headlamp e2e"
-    When I click "Zur e2e SL hinzufügen"
+    When I click "Add to e2e SL"
     Then I should see "Produkt wurde zur" flash message and I close it
     When I hover on "Shopping Cart"
     And click "e2e SL" on shopping list widget
