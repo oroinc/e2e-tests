@@ -44,21 +44,21 @@ Feature: Checkout with registered customer
       | Mot de passe              | BrandaJSanborn1@example.org |
       | Confirmez le Mot de passe | BrandaJSanborn1@example.org |
       | Client                    | e2e Customer                |
-      | Buyer (Prédéfini) | true          |
+      | Buyer (Prédéfini)         | true                        |
     And fill "Customer User Addresses Form" with:
-      | Principal         | true          |
-      | First Name Add    | Branda        |
-      | Last Name Add     | Sanborn e2e   |
-      | Organisation      | e2e Org       |
-      | Pays              | United States |
-      | Adresse           | Market St. 12 |
-      | Ville             | San Francisco |
-      | État              | California    |
-      | Code postal       | 90001         |
-      | Billing           | true          |
-      | Shipping          | true          |
-      | Billing par défaut  | true          |
-      | Shipping par défaut | true          |
+      | Principal              | true          |
+      | First Name Add         | Branda        |
+      | Last Name Add          | Sanborn e2e   |
+      | Organisation           | e2e Org       |
+      | Pays                   | États-Unis    |
+      | Adresse                | Market St. 12 |
+      | Ville                  | San Francisco |
+      | État                   | Californie    |
+      | Code postal            | 90001         |
+      | Facturation            | true          |
+      | Livraison              | true          |
+      | Facturation par défaut | true          |
+      | Livraison par défaut   | true          |
 
     And click "Enregistrer et Fermer"
     Then should see "L'utilisateur client a été sauvegardé" flash message

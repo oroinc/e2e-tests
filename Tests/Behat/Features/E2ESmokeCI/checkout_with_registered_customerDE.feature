@@ -46,19 +46,19 @@ Feature: Checkout with registered customer
       | Kunde                | e2e Customer                |
       | Buyer (Vordefiniert) | true                        |
     And fill "Customer User Addresses Form" with:
-      | Primär            | true          |
-      | First Name Add    | Branda        |
-      | Last Name Add     | Sanborn e2e   |
-      | Organisation      | e2e Org       |
-      | Land              | United States |
-      | Straße            | Market St. 12 |
-      | Ort               | San Francisco |
-      | Bundesland/Kanton | California    |
-      | Postleitzahl      | 90001         |
-      | Billing           | true          |
-      | Shipping          | true          |
-      | Standard Billing  | true          |
-      | Standard Shipping | true          |
+      | Primär            | true               |
+      | First Name Add    | Branda             |
+      | Last Name Add     | Sanborn e2e        |
+      | Organisation      | e2e Org            |
+      | Land              | Vereinigte Staaten |
+      | Straße            | Market St. 12      |
+      | Ort               | San Francisco      |
+      | Bundesland/Kanton | California         |
+      | Postleitzahl      | 90001              |
+      | Rechnung          | true               |
+      | Versand           | true               |
+      | Standard Rechnung | true               |
+      | Standard Versand  | true               |
     And click "Speichern und schließen"
     Then should see "Account-Benutzer ist gespeichert" flash message
 
