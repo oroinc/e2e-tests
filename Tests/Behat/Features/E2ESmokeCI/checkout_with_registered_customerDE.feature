@@ -171,6 +171,8 @@ Feature: Checkout with registered customer
     And click Ausloggen in user menu
     And I login as administrator
     When go to Vertrieb/ Bestellungen
+    And show column POBestellnummer in grid
+    And show filter "POBestellnummer" in grid
     And filter "POBestellnummer" as "Enthält" value "P777155"
     When click "Löschen" "P777155" in grid
     And I click "Ja, löschen"

@@ -164,6 +164,8 @@ Feature: Checkout with registered customer
     Given I proceed as the Admin
     And I login as administrator
     When go to Ventes/ Commandes
+    And show column Numéro du bon de commande in grid
+    And show filter "Numéro du bon de commande" in grid
     And filter "Numéro du bon de commande" as "Contient" value "P777155"
     When click "Supprimer" "P777155" in grid
     And I click "Oui, Supprimer"

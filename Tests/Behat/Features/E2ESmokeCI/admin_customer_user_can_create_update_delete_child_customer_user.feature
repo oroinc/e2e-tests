@@ -102,7 +102,7 @@ Feature: Admin customer user can create, update, delete child customer user
       | Zip/Postal Code | 90001           |
     And click "Save"
     Then I should see "Customer User Address has been saved" flash message
-#
+
     When I proceed as the User
     And I am on the homepage
     And I click "Accept Cookie Banner" if present

@@ -162,6 +162,8 @@ Feature: Checkout with registered customer
   Scenario: Clear all data
     Given I proceed as the Admin
     When go to Sales/Orders
+    And I show column PO Number in grid
+    And I show filter "PO Number" in grid
     And filter PO Number as is equal to "P777155"
     When I click delete "P777155" in grid
     And I confirm deletion
