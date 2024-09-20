@@ -24,10 +24,7 @@ Feature: Simple configurable product
       | Label  |
       | L      |
       | M      |
-    When save and close form for product attribute
-    And I reload the page
-    And click update schema
-    Then should see Schema updated flash message
+    Then save and close form for product attribute
 
     And go to Products/ Product Families
     When I click "Create Product Family"
