@@ -1,5 +1,5 @@
 @e2esmoke_de_ci
-Feature: Checkout with registered customer
+Feature: Checkout with registered customer DE
 
   Scenario: Create different window session
     Given sessions active:
