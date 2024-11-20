@@ -156,7 +156,7 @@ Feature: Checkout with registered customer
     And I check "Payment_Terms_e2e" on the "Payment" checkout step and press Continue
     And fill form with:
       | PO Number | P777155 |
-    When I check "Delete this shopping list after submitting order" on the "Order Review" checkout step and press Submit Order
+    When I check "Delete this shopping list after ordering" on the "Order Review" checkout step and press Submit Order
     Then I see the "Thank You" page with "Thank You For Your Purchase!" title
 
   Scenario: Clear all data
