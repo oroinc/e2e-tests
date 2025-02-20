@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": { "Oro\\Bundle\\E2eTestBundle\\": "" },
-        "exclude-from-classmap": ["/Tests/"]
+        "exclude-from-classmap": ["**/Tests/"]
     },
     "repositories": {
         "oro": {
