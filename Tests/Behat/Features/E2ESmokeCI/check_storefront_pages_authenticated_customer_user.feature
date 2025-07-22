@@ -89,7 +89,8 @@ Feature: Check storefront pages authenticated customer user
     And should see "Product has been added to "
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
-
+    And I scroll to top
+    
     And click "Gallery View"
     Then should not see "View Details" for "24_lumen_headlamp_e2e" product
     And should see "Product Image" for "24_lumen_headlamp_e2e" product
