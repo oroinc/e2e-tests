@@ -162,8 +162,7 @@ Feature: Checkout with registered customer
 
   Scenario: Clear all data
     Given I proceed as the Admin
-    And I click on "Organizations switcher"
-    And I click "ORO Inc - Worldwide"
+    And I am logged in under ORO Inc - Worldwide organization
     And go to System/ Lokalisierung/ Übersetzungen
     And filter "Schlüssel" as "Enthält" value "oro.order.po_number.label"
     And filter "Übersetzter Wert" as "Enthält" value "Bestellnummer"
