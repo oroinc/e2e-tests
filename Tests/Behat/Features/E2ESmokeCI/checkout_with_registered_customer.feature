@@ -191,7 +191,7 @@ Feature: Checkout with registered customer
     And I filter "SKU" as Contains "110_lumen_headlamp_e2e"
     And click delete '110_lumen_headlamp_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to System/ Shipping Rules
     And I filter "Name" as Contains "Flat Rate e2e"
