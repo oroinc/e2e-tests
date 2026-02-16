@@ -138,7 +138,7 @@ Feature: Checkout with registered customer
     Then should see an "Create New Shopping List popup" element
     And type "e2e SL" in "Shopping List Name"
     And click "Create"
-    And should see "e2e SL"
+    And I should see "e2e SL" flash message
 
     And I am on homepage
     And I type "110_lumen_headlamp_e2e" in "search"
@@ -189,31 +189,31 @@ Feature: Checkout with registered customer
     And I filter "SKU" as Contains "110_lumen_headlamp_e2e"
     And click delete '110_lumen_headlamp_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to System/ Shipping Rules
     And I filter "Name" as Contains "Flat Rate e2e"
     And click delete 'Flat Rate e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Shipping Rule deleted"
+    Then I should see "Shipping Rule deleted" flash message
 
     When go to System/ Payment Rules
     And I filter "Name" as Contains "Payment Terms e2e"
     And click delete 'Payment Terms e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Payment Rule deleted"
+    Then I should see "Payment Rule deleted" flash message
 
     When go to System/ Integrations/ Manage Integrations
     And I filter "Name" as Contains "Flat Rate e2e"
     And click delete 'Flat Rate e2e' in grid
     And click "Yes"
-    Then I should see "Integration has been deleted successfully"
+    Then I should see "Integration has been deleted successfully" flash message
 
     When go to System/ Integrations/ Manage Integrations
     And I filter "Name" as Contains "Payment Terms e2e"
     And click delete 'Payment Terms e2e' in grid
     And click "Yes"
-    Then I should see "Integration has been deleted successfully"
+    Then I should see "Integration has been deleted successfully" flash message
 
     When go to Sales/ Payment terms
     And I click delete 'net_10_e2e' in grid

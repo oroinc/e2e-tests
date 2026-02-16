@@ -139,7 +139,7 @@ Feature: Checkout with registered customer
     Then should see an "Create New Shopping List popup" element
     And type "e2e SL" in "Einkaufslistenname"
     And click "Erstellen"
-    And should see "e2e SL"
+    And I should see "e2e SL" flash message
 
     And I am on homepage
     And I type "110_lumen_headlamp_e2e" in "search"
@@ -191,7 +191,7 @@ Feature: Checkout with registered customer
     And I filter "Art.-Nr." as "Enthält" value "110_lumen_headlamp_e2e"
     And click "Löschen" "110_lumen_headlamp_e2e" in grid
     And click "Ja, löschen"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to System/ Versand Regeln
     And I filter "Name" as "Enthält" value "Flat Rate e2e"

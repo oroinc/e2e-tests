@@ -86,7 +86,7 @@ Feature: Check storefront pages authenticated customer user
     And should see "$15.99" for "24_lumen_headlamp_e2e" product
     And filter SKU as is equal to "24_lumen_headlamp_e2e"
     And click "Add to Shopping List" for "24_lumen_headlamp_e2e" product
-    And should see "Product has been added to "
+    And should see "Product has been added to " flash message
     And should see "Green Box" for "24_lumen_headlamp_e2e" product
     And should see "Update Shopping List" for "24_lumen_headlamp_e2e" product
 
@@ -132,7 +132,7 @@ Feature: Check storefront pages authenticated customer user
     And I filter "SKU" as Contains "24_lumen_headlamp_e2e"
     And click delete '24_lumen_headlamp_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to Customers/ Customers
     And I filter "Name" as Contains "Second e2e Customer"

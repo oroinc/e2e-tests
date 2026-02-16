@@ -58,9 +58,9 @@ Feature: Create delete product
     When go to Products/ Products
     And click delete 'Lenovo_Vibe_sku_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
     When go to Products/ Master Catalog
     And click "Phones e2e"
     And click "Delete"
     And I confirm deletion
-    Then I should see "Category deleted"
+    Then I should see "Category deleted" flash message
