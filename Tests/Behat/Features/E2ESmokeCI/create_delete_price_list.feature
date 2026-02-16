@@ -213,10 +213,10 @@ Feature: Create delete price list
     And I filter "SKU" as Contains "500_lumen_headlamp_e2e"
     And click delete '500_lumen_headlamp_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to Products/ Products
     And I filter "SKU" as Contains "led_blood_pressure_monitors_e2e"
     And click delete 'led_blood_pressure_monitors_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message

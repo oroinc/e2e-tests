@@ -193,7 +193,7 @@ Feature: Checkout with registered customer DE
     And I filter "Art.-Nr." as "Enthält" value "110_lumen_headlamp_e2e"
     And click "Löschen" "110_lumen_headlamp_e2e" in grid
     And click "Ja, löschen"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to System/ Versand Regeln
     And I filter "Name" as "Enthält" value "Flat Rate e2e"

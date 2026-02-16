@@ -143,9 +143,9 @@ Feature: Create delete webcatalog
     When go to Products/ Products
     And click delete '220_lumen_headlamp_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to Products/ Products
     And click delete 'blood_pressure_monitors_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message

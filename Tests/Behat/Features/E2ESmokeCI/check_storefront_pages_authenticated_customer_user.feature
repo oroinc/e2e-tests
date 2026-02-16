@@ -133,7 +133,7 @@ Feature: Check storefront pages authenticated customer user
     And I filter "SKU" as Contains "24_lumen_headlamp_e2e"
     And click delete '24_lumen_headlamp_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to Customers/ Customers
     And I filter "Name" as Contains "Second e2e Customer"
