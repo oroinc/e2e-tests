@@ -187,7 +187,7 @@ Feature: Checkout with registered customer FR
     And I filter "SKU" as "Contient" value "110_lumen_headlamp_e2e"
     And click "Supprimer" "110_lumen_headlamp_e2e" in grid
     And click "Oui, supprimer"
-    Then I should see "Product deleted"
+    Then I should see "Product deleted" flash message
 
     When go to Système/ Règles de livraison
     And I filter "Nom" as "Contient" value "Flat Rate e2e"
