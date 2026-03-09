@@ -53,7 +53,7 @@ Feature: Create delete tax related entities
     Given go to Taxes/ Tax Rules
     And click delete 'Phone_Tax_Code_e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Tax Rule deleted"
+    Then I should see "Tax Rule deleted" flash message
 
     When go to Taxes/ Tax Jurisdictions
     And click delete 'CA_Jurisdiction_e2e' in grid

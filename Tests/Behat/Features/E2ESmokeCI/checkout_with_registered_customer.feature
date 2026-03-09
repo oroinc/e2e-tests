@@ -197,7 +197,7 @@ Feature: Checkout with registered customer
     And I filter "Name" as Contains "Flat Rate e2e"
     And click delete 'Flat Rate e2e' in grid
     And click "Yes, Delete"
-    Then I should see "Shipping Rule deleted"
+    Then I should see "Shipping Rule deleted" flash message
 
     When go to System/ Payment Rules
     And I filter "Name" as Contains "Payment Terms e2e"
