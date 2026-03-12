@@ -63,4 +63,4 @@ Feature: Create delete product
     And click "Phones e2e"
     And click "Delete"
     And I confirm deletion
-    Then I should see "Category deleted"
+    Then I should see "Category deleted" flash message
