@@ -12,13 +12,13 @@
         }
     ],
     "require": {
-        "oro/commerce": "7.0.*",
-        "oro/commerce-dpd": "7.0.*",
-        "oro/crm": "7.0.*",
-        "oro/crm-dotmailer": "7.0.*",
-        "oro/crm-pro-ldap-bundle": "7.0.*",
-        "oro/crm-zendesk": "7.0.*",
-        "oro/mailchimp": "7.0.*"
+        "oro/commerce": "7.1.*",
+        "oro/commerce-dpd": "7.1.*",
+        "oro/crm": "7.1.*",
+        "oro/crm-dotmailer": "7.1.*",
+        "oro/crm-pro-ldap-bundle": "7.1.*",
+        "oro/crm-zendesk": "7.1.*",
+        "oro/mailchimp": "7.1.*"
     },
     "autoload": {
         "psr-4": { "Oro\\Bundle\\E2eTestBundle\\": "" },
@@ -34,7 +34,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "7.0-dev"
+            "dev-master": "7.1-dev"
         }
     }
 }
