@@ -114,3 +114,13 @@ oro_behat_extension:
       selector:
         locator: '//span[contains(@class, "main-menu__text-label")][text()="Clearance"]/../../..//li[contains(@class, "main-menu-column__item")]//a[contains(text(),"Lighting  Products")]'
         type: xpath
+
+    Lighting Products e2e Category Title:
+      selector:
+        locator: '//h1[contains(@class, "category-title")][normalize-space(.)="Lighting Products e2e"]'
+        type: xpath
+
+    Medical e2e Category Title:
+      selector:
+        locator: '//h1[contains(@class, "category-title")][normalize-space(.)="Medical e2e"]'
+        type: xpath
