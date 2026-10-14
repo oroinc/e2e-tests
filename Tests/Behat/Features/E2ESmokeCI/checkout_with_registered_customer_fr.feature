@@ -193,25 +193,25 @@ Feature: Checkout with registered customer FR
     And I filter "Nom" as "Contient" value "Flat Rate e2e"
     And click "Supprimer" "Flat Rate e2e" in grid
     And click "Oui, Supprimer"
-    Then I should see "Règle de livraison supprimé"
+    Then I should see "Règle de livraison supprimé" flash message
 
     When go to Système/ Règles de paiement
     And I filter "Nom" as "Contient" value "Payment Terms e2e"
     And click "Supprimer" "Payment Terms e2e" in grid
     And click "Oui, Supprimer"
-    Then I should see "Règle de paiement supprimé"
+    Then I should see "Règle de paiement supprimé" flash message
 
     When go to Système/ Intégrations/ Gérer les Intégrations
     And I filter "Nom" as "Contient" value "Flat Rate e2e"
     And click "Supprimer" "Flat Rate e2e" in grid
     And click "Oui"
-    Then I should see "L'intégration a été supprimée avec succès"
+    Then I should see "L'intégration a été supprimée avec succès" flash message
 
     When go to Système/ Intégrations/ Gérer les Intégrations
     And I filter "Nom" as "Contient" value "Payment Terms e2e"
     And click "Supprimer" "Payment Terms e2e" in grid
     And click "Oui"
-    Then I should see "L'intégration a été supprimée avec succès"
+    Then I should see "L'intégration a été supprimée avec succès" flash message
 
     When go to Ventes/ Conditions de paiement
     And click "Supprimer" "net_10_e2e" in grid

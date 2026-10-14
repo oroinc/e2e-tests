@@ -10,7 +10,7 @@ Feature: Checkout with registered customer DE
     Given I proceed as the Admin
     And I login as administrator
     And go to System/ Konfiguration
-    And follow "Handel/Lagerbestand/Produkt-Optionen" on configuration sidebar
+    And follow "Commerce/Lagerbestand/Produkt-Optionen" on configuration sidebar
     And fill "Product Option Form" with:
       | Backorders Default | false |
       | Lieferrückstände   | Ja    |
@@ -178,7 +178,7 @@ Feature: Checkout with registered customer DE
     Then should see "Bestellung gelöscht" flash message
 
     And go to System/ Konfiguration
-    And follow "Handel/Lagerbestand/Produkt-Optionen" on configuration sidebar
+    And follow "Commerce/Lagerbestand/Produkt-Optionen" on configuration sidebar
     And fill "Product Option Form" with:
       | Backorders Default | true |
     And I click "Einstellungen speichern"
@@ -199,25 +199,25 @@ Feature: Checkout with registered customer DE
     And I filter "Name" as "Enthält" value "Flat Rate e2e"
     And click "Löschen" "Flat Rate e2e" in grid
     And click "Ja, löschen"
-    Then I should see "Versandregel gelöscht"
+    Then I should see "Versandregel gelöscht" flash message
 
     When go to System/ Zahlungsregeln
     And I filter "Name" as "Enthält" value "Payment Terms e2e"
     And click "Löschen" "Payment Terms e2e" in grid
     And click "Ja, löschen"
-    Then I should see "Zahlungsregel gelöscht"
+    Then I should see "Zahlungsregel gelöscht" flash message
 
     When go to System/ Integrationen/ Integrationen verwalten
     And I filter "Name" as "Enthält" value "Flat Rate e2e"
     And click "Löschen" "Flat Rate e2e" in grid
     And click "Ja"
-    Then I should see "Integration wurde erfolgreich gelöscht"
+    Then I should see "Integration wurde erfolgreich gelöscht" flash message
 
     When go to System/ Integrationen/ Integrationen verwalten
     And I filter "Name" as "Enthält" value "Payment Terms e2e"
     And click "Löschen" "Payment Terms e2e" in grid
     And click "Ja"
-    Then I should see "Integration wurde erfolgreich gelöscht"
+    Then I should see "Integration wurde erfolgreich gelöscht" flash message
 
     When go to Vertrieb/ Zahlungsbedingungen
     And click "Löschen" "net_10_e2e" in grid
