@@ -10,3 +10,7 @@ Resources
   * [OroCommerce Documentation](https://doc.oroinc.com)
   * [End-to-End Testing with Behat](https://doc.oroinc.com/backend/automated-tests/e2e/)
   * [Contributing](https://doc.oroinc.com/community/contribute/)
+
+## License
+
+[OSL-3.0](LICENSE) Copyright (c) 2026 Oro Inc.
